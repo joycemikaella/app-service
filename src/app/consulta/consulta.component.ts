@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ContatoService } from '../contato.service';
 
@@ -7,10 +8,15 @@ import { ContatoService } from '../contato.service';
   styleUrls: ['./consulta.component.css']
 })
 export class ConsultaComponent implements OnInit {
+  contatos: any = []
 
   constructor(private service: ContatoService) { }
 
   ngOnInit(): void {
+  }
+
+  consultarTodos():void{
+    this.service.getContatos().subscribe(data => this.contatos = data)
   }
 
 }

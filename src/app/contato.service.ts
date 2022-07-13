@@ -11,4 +11,7 @@ export class ContatoService {
   getContatos(){
     return this.htpp.get('http://localhost:3000/contatos')
   }
+  save(data:any){
+    return this.htpp.post('http://localhost:3000/contatos', data)
+  }
 }

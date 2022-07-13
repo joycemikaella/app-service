@@ -1,0 +1,32 @@
+<form #f="ngForm" (ngSubmit)="saveContato(f.value)">
+    <input type="text" ngModel name="nome" placeholder="Informe nome"/>
+    <input type="number" ngModel name="idade" placeholder="Informe idade"/>
+    <input type="text" ngModel name="email" placeholder="Informe email"/>
+        <button>Salvar</button>
+        <label>{{ msg }}</label>
+</form>
+<br>
+<hr>
+<!--
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contato of contatos">
+            <td>{{ contato.nome }}</td>
+            <td>{{ contato.idade }}</td>
+            <td>{{ contato.email }}</td>
+            
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+-->
