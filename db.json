@@ -1,0 +1,10 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "maria",
+      "idade": 25,
+      "email": "mariabonita@gmail.com"
+    }
+  ]
+}
