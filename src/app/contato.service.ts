@@ -11,6 +11,9 @@ export class ContatoService {
   getContatos(){
     return this.htpp.get('http://localhost:3000/contatos')
   }
+  getUmContato(id:number){
+    return this.htpp.get(`http://localhost:3000/contatos${id}`)
+  }
   save(data:any){
     return this.htpp.post('http://localhost:3000/contatos', data)
   }
