@@ -8,14 +8,14 @@
     },
     {
       "id": 2,
-      "nome": "Severino",
+      "nome": "Severino de Aracaju",
       "idade": 15,
-      "email": "lampiao@gmail.com"
+      "email": "capitao@gmail.com"
     },
     {
-      "nome": "joyce",
+      "nome": "mikaella",
       "idade": 27,
-      "email": "joycemikaella@gmail.com",
+      "email": "mikaella@gmail.com",
       "id": 3
     },
     {
@@ -37,10 +37,16 @@
       "id": 6
     },
     {
-      "nome": "",
-      "idade": "",
-      "email": "",
+      "nome": "Jamila",
+      "idade": 25,
+      "email": "jamila@gmail.com",
       "id": 7
+    },
+    {
+      "nome": "Jessica",
+      "idade": 28,
+      "email": "jejita@gmail.com",
+      "id": 8
     }
   ]
 }

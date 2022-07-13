@@ -10,18 +10,22 @@ export class EdicaoComponent implements OnInit {
 
   idcontato: number = 0
   contato: any = {}
+
   constructor(private route: ActivatedRoute, private service: ContatoService) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     this.idcontato = Number(routeParams.get('idcontato'))
-    this.service.getUmContato(this.idcontato).subscribe(data =>{
+    this.service.getUmContato(this.idcontato).subscribe( data => {
       this.contato = data
-      console.log(this.contato)})
+    }
+    )
   }
 
-  efetivaAlteracao(): void{
-    //service
+  msg: string = ''
+
+  efetivarAlteracao(): void {
+    this.service.alterarContato(this.contato).subscribe(data => this.msg = 'contato alterado com sucesso')
   }
 
 }
