@@ -1,32 +1,34 @@
-<form #f="ngForm" (ngSubmit)="saveContato(f.value)">
-    <input type="text" ngModel name="nome" placeholder="Informe nome"/>
-    <input type="number" ngModel name="idade" placeholder="Informe idade"/>
-    <input type="text" ngModel name="email" placeholder="Informe email"/>
-        <button>Salvar</button>
-        <label>{{ msg }}</label>
-</form>
-<br>
-<hr>
-<!--
-<table>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let contato of contatos">
-            <td>{{ contato.nome }}</td>
-            <td>{{ contato.idade }}</td>
-            <td>{{ contato.email }}</td>
-            
+<div class="container">
 
-        </tr>
+    <form #f="ngForm" (ngSubmit)="saveContato(f.value)">
+        <input type="text" ngModel name="nome" placeholder="Informe nome" #n="ngModel" required />
+        <div *ngIf="n.invalid">
+            <div *ngIf="n.errors?.['required']">
+                Nome deve ser informado
+            </div>
+            <div *ngIf="n.errors?.['minlength']">
+                Nome deve conter pelo menos 3 caracteres
+            </div>
+            <div *ngIf="n.errors?.['maxlength']">
+                Nome longo demais
+            </div>
+        </div>
 
-    </tbody>
+        <input type="number" ngModel name="idade" #i="ngModel" placeholder="Informe a idade" required />
 
-</table>
+        <div *ngIf="i.value <= 17">
+            Nome deve ser informado
+        </div>
 
--->
+        <input type="email" ngModel name="email" placeholder="Informe o email" />
+        <input type="password" pattern="(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
+        )" />
+
+        <button [disabled]="f.invalid">Salvar</button>
+
+        <label>{{msg}}</label>
+        <label>{{f.valid}}</label>
+    </form>
+
+
+</div>

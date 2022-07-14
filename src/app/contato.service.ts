@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,15 @@ export class ContatoService {
   constructor(private htpp:HttpClient) { }
 
   getContatos(){
-    return this.htpp.get('http://localhost:3000/contatos')
+    return this.htpp.get(`${environment.BASE_URL}contatos`)
   }
   getUmContato(id:number){
-    return this.htpp.get(`http://localhost:3000/contatos/${id}`)
+    return this.htpp.get(`${environment.BASE_URL}contatos/${id}`)
   }
   save(data:any){
-    return this.htpp.post('http://localhost:3000/contatos', data)
+    return this.htpp.post(`${environment.BASE_URL}contatos`, data)
   }
   alterarContato(dados: any){
-    return this.htpp.put(`http://localhost:3000/contatos/${dados.id}`, dados)
+    return this.htpp.put(`${environment.BASE_URL}contatos/${dados.id}`, dados)
   }
 }

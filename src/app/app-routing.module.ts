@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { EdicaoComponent } from './edicao/edicao.component';
+import { AuthGuard } from './auth-guard.service';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 {
@@ -11,11 +13,16 @@ const routes: Routes = [
 },
 {
   path: 'cadastro',
-  component: CadastroComponent
+  component: CadastroComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'contato/:idcontato',
   component: EdicaoComponent
+},
+{
+  path: 'login',
+  component: LoginComponent
 }
 ];
 
