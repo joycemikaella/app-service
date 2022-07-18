@@ -5,6 +5,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import { EdicaoComponent } from './edicao/edicao.component';
 import { AuthGuard } from './auth-guard.service';
 import { LoginComponent } from './login/login.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const routes: Routes = [
 {
@@ -23,6 +24,10 @@ const routes: Routes = [
 {
   path: 'login',
   component: LoginComponent
+},
+{
+  path: 'pipes',
+  component: PipesComponent
 }
 ];
 

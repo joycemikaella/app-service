@@ -1,5 +1,5 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContatoService } from '../contato.service';
 
 @Component({
@@ -7,13 +7,10 @@ import { ContatoService } from '../contato.service';
   templateUrl: './consulta.component.html',
   styleUrls: ['./consulta.component.css']
 })
-export class ConsultaComponent implements OnInit {
+export class ConsultaComponent{
   contatos: any = []
 
   constructor(private service: ContatoService) { }
-
-  ngOnInit(): void {
-  }
 
   consultarTodos():void{
     this.service.getContatos().subscribe(data => this.contatos = data)

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContatoService } from '../contato.service';
 
 @Component({
@@ -6,13 +6,11 @@ import { ContatoService } from '../contato.service';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
-export class CadastroComponent implements OnInit {
+export class CadastroComponent {
   cadastro: any = []
 
   constructor(private service: ContatoService) { }
 
-  ngOnInit(): void {
-  }
   msg: string = ''
   saveContato(data: any) {
     this.service.save(data).subscribe(
