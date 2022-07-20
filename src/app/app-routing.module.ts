@@ -6,6 +6,8 @@ import { EdicaoComponent } from './edicao/edicao.component';
 import { AuthGuard } from './auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { UsuarioserviceService } from './usuarioservice.service';
 
 const routes: Routes = [
 {
@@ -28,6 +30,10 @@ const routes: Routes = [
 {
   path: 'pipes',
   component: PipesComponent
+},
+{
+  path: 'usuario',
+  component: CadastroUsuarioComponent
 }
 ];
 
